@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: url('../public/images/cursor.png') 39 39, auto;
 }
 
-.App-link {
-  color: #61dafb;
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tiles per row */
+  gap: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  display: flex; 
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+
+.tile.empty {
+  background: transparent;
+}
+
+.about {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.5;
 }
