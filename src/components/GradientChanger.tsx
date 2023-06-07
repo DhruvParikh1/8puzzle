@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { cubicCoordinates, stepsCoordinates } from 'easing-coordinates'
 import { useSpring, animated, to as interpolate, createInterpolator } from '@react-spring/web'
-import { useControls, folder } from 'leva' // Import the `folder` function
+import { useControls, Leva } from 'leva' // Import the `folder` function
 
 import styles from './styles.module.css'
 
@@ -74,15 +74,27 @@ const GradientChanger = () => {
       })
 
       return (
-        <animated.div
-          className={styles.container}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            backgroundImage: allStops.to((...args) => `linear-gradient(${angle}deg, ${args.join(', ')})`),
-          }}
-        />
+        <>
+          <animated.div
+            className={styles.container}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              backgroundImage: allStops.to((...args) => `linear-gradient(${angle}deg, ${args.join(', ')})`),
+            }}
+          />
+          <Leva
+            //theme={} // you can pass a custom theme (see the styling section)
+            //fill // default = false,  true makes the pane fill the parent dom node it's rendered in
+            //flat // default = false,  true removes border radius and shadow
+            //oneLineLabels // default = false, alternative layout for labels, with labels and fields on separate rows
+            //hideTitleBar // default = false, hides the GUI header
+            collapsed={true} // default = false, when true the GUI is collpased
+            //hidden // default = false, when true the GUI is hidden
+          />
+        </>
+
       )    
 }
 
