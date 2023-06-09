@@ -6,6 +6,8 @@ import './App.css';
 import PuzzleBoard from './components/PuzzleBoard';
 import About from './components/About';
 import GradientChanger from './components/GradientChanger';
+import './tailwind.output.css';
+
 
 const App: React.FC = () => {
     return (

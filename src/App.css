@@ -6,10 +6,14 @@ body {
 }
 
 .app {
-  width: 100%;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100vh;  
+  width: 100vw;
   position: relative;
 }
+
 
 .container {
   display: flex;
@@ -23,10 +27,25 @@ body {
 }
 
 .puzzle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.shuffle-button-container {
+  margin-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.tiles-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 tiles per row */
   gap: 5px;
 }
+
 
 .row {
   display: flex; 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Tile from './Tile';
+import ShuffleButton from "./ShuffleButton";
 
 interface Coords {
     i: number;
@@ -40,11 +41,14 @@ const PuzzleBoard: React.FC = () => {
 
     return (
         <div className='puzzle'>
-            {puzzle.map((row, i) =>
-                row.map((number, j) => (
-                    <Tile key={`${i}-${j}`} number={number} onClick={() => handleClick(i, j)} />
-                ))
-            )}
+            <div className="tiles-container">
+                {puzzle.map((row, i) =>
+                    row.map((number, j) => (
+                        <Tile key={`${i}-${j}`} number={number} onClick={() => handleClick(i, j)} />
+                    ))
+                )}
+            </div>
+            <ShuffleButton />
         </div>
     );    
 };
